@@ -32,7 +32,7 @@ def scrapeAllAmazonProducts(url, header):
               absolute_link = f"https://www.amazon.com{product_link}"
 
               # scraping data from the product page and returning the product
-              product = scrapeProductPage(absolute_link)
+              product = scrapeProductPage(absolute_link, header)
 
               # adding the product to the list
               products_list.append(product)       
