@@ -11,8 +11,8 @@ The "scrapeAllAmazonProducts" function will firstly get the response from the ur
 soup library to find the parent div that holds all the children divs, where each one of those children is a div of a product.
 
 After that, we gonna loop through all thos children, and get the link of that specific product, concatenate it with the amazon 
-site and passing this new url to the "scrapeProductPage" function which will do the same as the previous function, but instead it 
-will get only the name, price, brand, reviews, description, rating from on single product page. after that it will return a product 
+site url and passing this new url to the "scrapeProductPage" function which will do the same as the previous function, but instead it 
+will get only the name, price, brand, reviews, description, rating from one single product. after that it will return a product 
 OBJECT which will be added by the first function to the "products_list" list.
 
 Finally we are calling the "CSVFile" function passing to it the "products_list" so it creats a DataFrame then a CSV file containing
