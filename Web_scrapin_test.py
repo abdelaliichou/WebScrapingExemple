@@ -5,7 +5,7 @@ import csv
 from io import StringIO
 
 # Main scraping function ( Loop )
-def scrapeAllAmazonProducts(url, header):
+async def scrapeAllAmazonProducts(url, header):
 
     response = requests.get(url, headers = header)
 
@@ -32,13 +32,14 @@ def scrapeAllAmazonProducts(url, header):
               absolute_link = f"https://www.amazon.com{product_link}"
 
               # scraping data from the product page and returning the product
-              product = scrapeProductPage(absolute_link, header)
+              product = await scrapeProductPage(absolute_link)
 
               # adding the product to the list
               products_list.append(product)       
 
-              # creating the csv file
-              CSVFile(products_list,0)
+
+            # creating the csv file
+            CSVFile(products_list,0)
 
         else :
             print("Can't reach the parent component because of Amazon's confideniality problem")      
